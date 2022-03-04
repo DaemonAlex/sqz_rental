@@ -219,11 +219,11 @@ function startTimer()
         CreateThread(function()
             while rentalTimer>0 do
                 rentalTimer=rentalTimer-1
-                Citizen.Wait(1000)
+                Wait(1000)
             end
         end)
         while rentalTimer>0 do
-            Citizen.Wait(0)
+            Wait(0)
             SetTextFont(4)
             SetTextScale(0.45, 0.45)
             SetTextColour(185, 185, 185, 255)

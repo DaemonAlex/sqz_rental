@@ -13,7 +13,7 @@ AddEventHandler('sqz_carrental:RentVehicle', function(model, insurance, price, t
         TriggerClientEvent('QBCore:Notify', source,'You have paid '..price..'$')
         TriggerClientEvent('QBCore:Notify', source,'You have paid '..Config.DownPayment..'$ as a down payment')
         TriggerClientEvent('sqz_carrental:SpawnVehicle', source, model, insurance, price, time, rentalIndex)
-    elseif Player.PlayerData.money['bank'] .money >= price + Config.DownPayment then
+    elseif xPlayer.PlayerData.money['bank'] >= price + Config.DownPayment then
         xPlayer.Functions.RemoveMoney('bank', price + Config.DownPayment)
         TriggerClientEvent('QBCore:Notify', source,'You have paid '..Config.DownPayment..'$ as a down payment from your bank account')
         TriggerClientEvent('QBCore:Notify', source,'You have paid '..price..'$ from your bank account')
